@@ -1,0 +1,9 @@
+# Allowlist: no infrastructure, docs, credentials, state or local artifacts.
+**
+!app.py
+!portal/
+!portal/templates/
+!portal/templates/dashboard.html
+!requirements.txt
+!Dockerfile
+!.dockerignore

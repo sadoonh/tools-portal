@@ -1,0 +1,18 @@
+<!doctype html>
+<title>{{ title }}</title>
+<h1>{{ title }}</h1>
+<p>Protected welcome. Choose an available tool.</p>
+<main>
+{% for tool in tools %}
+<article id="{{ tool.id }}">
+<h2><a href="{{ tool.url }}" rel="noreferrer">{{ tool.name }}</a></h2>
+<p>{{ tool.description }}</p>
+</article>
+{% else %}
+<p>No tools are enabled yet.</p>
+{% endfor %}
+</main>
+<form method="post" action="/logout">
+<input type="hidden" name="csrf" value="{{ csrf }}">
+<button type="submit">Sign out</button>
+</form>

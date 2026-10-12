@@ -1,0 +1,25 @@
+# Copy to terraform.tfvars on the company PC and edit the account settings.
+aws_account_id     = "REPLACE_WITH_12_DIGIT_ACCOUNT_ID"
+aws_region         = "us-east-1"
+project_name       = "company-tools"
+owner              = "your-name"
+vpc_cidr           = "10.120.0.0/16"
+availability_zones = ["us-east-1a", "us-east-1b"]
+portal_title       = "Company Tools"
+deployment_purpose = "Company tools portal"
+
+# Same authentication and architecture as the working deployment.
+auth_enabled                    = true
+marimohub_enabled               = true
+marimohub_allowed_email_domains  = ["example.com"]
+
+# First apply: create infrastructure and ECR repositories without running tasks.
+enable_service                  = false
+marimohub_service_enabled        = false
+marimohub_portal_link_enabled    = false
+marimohub_proxy_ack              = false
+
+# After pushing images, paste the new account's repository@sha256 URIs here.
+image_uri                       = ""
+marimohub_server_image_uri       = ""
+marimohub_kernel_image_uri       = ""
